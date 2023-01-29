@@ -19,7 +19,7 @@ Step 1: Create an EC2 instance and configure CloudWatch for monitoring resource 
   Configure CloudWatch agent to monitor CPU utilization and disk usage by running the following command:
     sudo nano /etc/awslogs/awslogs.conf
   Add the following content to the file and save it:
-
+<
 [general]
 state_file = /var/awslogs/state/agent-state
 
@@ -38,7 +38,7 @@ buffer_duration = 5000
 log_stream_name = {instance_id}
 initial_position = start_of_file
 log_group_name = /var/log/cloudwatch/disk_usage.log
-
+>
   Restart the CloudWatch agent by running the following command:
     sudo systemctl restart awslogsd
   Verify that the monitoring data is being sent to CloudWatch by navigating to CloudWatch in the AWS Management Console and checking the metrics for the instance.
